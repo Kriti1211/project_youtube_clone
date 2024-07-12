@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: youtube-clone-app-deployment
 spec:
-  replicas: 3  # Adjust as per your scaling needs
+  replicas: 3
   selector:
     matchLabels:
       app: youtube-clone-app
@@ -14,6 +14,9 @@ spec:
     spec:
       containers:
         - name: youtube-clone-app
-          image: youtube-clone-app:latest  # Replace with your Docker image name
+          image: kritika1012/youtube-clone-app:latest
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: regcred # Reference to the secret containing Docker registry credentials
+
