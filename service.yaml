@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: youtube-clone-app-service
+spec:
+  selector:
+    app: youtube-clone-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer  # Expose externally using a LoadBalancer (for cloud providers)
