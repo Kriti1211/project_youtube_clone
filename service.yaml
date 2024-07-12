@@ -9,4 +9,5 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: LoadBalancer # Expose externally using a LoadBalancer (for cloud providers)
+      nodePort: 30000 # Specify the nodePort value you want to use (in the range 30000-32767)
+  type: NodePort
